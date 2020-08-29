@@ -3,11 +3,10 @@
 #include <fcntl.h>
 #include <unistd.h>
 #include <string.h>
-#include <math.h>
 
 int main(int argc, char **argv) {
     
-    unsigned int virtual_address, page_number, offset;
+    unsigned long int virtual_address, page_number, offset;
 
     if (argc == 2) {
 
@@ -15,9 +14,9 @@ int main(int argc, char **argv) {
         page_number = virtual_address >> 12;
         offset = (virtual_address >> 0) & (~(~0 << (12 - 0 + 1)));
 
-        printf("La direccion %d contiene:\n", virtual_address);
-        printf("número de pagina = %d\n", page_number);
-        printf("offset = %d\n", offset);
+        printf("La direccion %ld contiene:\n", virtual_address);
+        printf("número de pagina = %ld\n", page_number);
+        printf("offset = %ld\n", offset);
         
         
     }else {
